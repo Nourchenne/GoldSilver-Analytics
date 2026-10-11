@@ -1,0 +1,13 @@
+Au 22 mai 2024 à la clôture, l’abstention est la décision simulée retenue pour les deux actifs aux deux horizons. Les réseaux prévoient de faibles hausses, mais leur avantage prédictif n’est pas régulier dans la validation disponible à cette date.
+
+| Actif | Horizon | Variation prévue LSTM / GRU | Décision simulée | Justification |
+|---|---:|---:|---|---|
+| GLD | 5 séances | +0,136 % / +0,155 % | Abstention | Signal positif faible ; la référence prévoit un prix inchangé et l’incertitude GARCH est large. |
+| GLD | 10 séances | +0,249 % / +0,251 % | Abstention | Les réseaux concordent, mais cette concordance ne démontre pas une occasion rentable après frais. |
+| SLV | 5 séances | +0,054 % / +0,074 % | Abstention | Hausse prévue très limitée face à l’amplitude des fluctuations envisagées. |
+| SLV | 10 séances | +0,161 % / +0,222 % | Abstention | Signal modeste, avec un risque imparfaitement décrit par le GARCH. |
+
+Les prévisions ponctuelles indiquent une direction légèrement haussière. Elles ne fournissent ni une probabilité de hausse ni une garantie de gain. Le prix inchangé reste une référence concurrente ; LSTM et GRU utilisent les mêmes données, donc leur accord ne constitue pas deux confirmations indépendantes.
+Les intervalles GARCH décrivent séparément l’incertitude des prix sous un modèle de rendements à moyenne nulle. Pour GLD, ils vont de 210,35 à 230,59 USD à cinq séances et de 206,36 à 234,94 USD à dix séances. Pour SLV, les bornes sont respectivement 25,67–31,12 USD et 24,62–32,33 USD. Ces amplitudes sont importantes face aux petites variations prévues par les réseaux. Toutefois, ces intervalles ne sont pas des intervalles autour des prévisions LSTM ou GRU, et leur largeur ne constitue pas, à elle seule, un test de rentabilité.
+Les frais, les écarts entre prix d’achat et de vente et les conditions de liquidité pourraient absorber les faibles gains envisagés ; leur effet n’a pas été mesuré. Des changements de régime ou des événements nouveaux peuvent également dégrader les prévisions. Enfin, les effets ARCH résiduels, particulièrement pour SLV, signalent que le modèle de risque reste incomplet.
+L’abstention signifie ici ne pas ouvrir de nouvelle position sur la seule base de ces signaux. Elle ne préjuge pas de la gestion d’une position existante, qui nécessiterait des informations sur ses objectifs et contraintes. Cette décision pédagogique repose exclusivement sur les éléments fournis disponibles au 22 mai 2024.

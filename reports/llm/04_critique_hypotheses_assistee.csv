@@ -1,0 +1,7 @@
+Point,Évaluation,Justification
+Stationnarité,Cohérent,Les tests soutiennent des log-prix I(1) et des rendements stationnaires ; la réponse conserve une formulation prudente.
+Modèle de moyenne,Confirmé par les estimations,"ARIMA(0,1,0) sans dérive est retenu par les comparaisons manuelle et automatique."
+Volatilité,Pertinent mais validation partielle,"ARCH-LM motive GARCH. La Student est pertinente comme candidate, mais des effets ARCH résiduels subsistent après estimation."
+Cointégration et saisonnalité,Prudence appropriée,La réponse ne les déduit pas des statistiques descriptives et exige des diagnostics supplémentaires.
+Réseaux récurrents,Protocole pertinent,"La réponse recommande une validation temporelle, un scaler ajusté sur le passé et une référence naïve."
+Limites de la réponse,À compléter,La réponse propose des familles de modèles sans fixer leurs ordres. Une Student symétrique ne décrit pas à elle seule l’asymétrie empirique des rendements.

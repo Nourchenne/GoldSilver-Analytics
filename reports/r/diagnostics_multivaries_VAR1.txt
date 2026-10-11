@@ -1,0 +1,36 @@
+
+	Portmanteau Test (adjusted)
+
+data:  Residuals of VAR object var1
+Chi-squared = 108.05, df = 76, p-value = 0.009219
+
+$JB
+
+	JB-Test (multivariate)
+
+data:  Residuals of VAR object var1
+Chi-squared = 15057, df = 4, p-value < 2.2e-16
+
+
+$Skewness
+
+	Skewness only (multivariate)
+
+data:  Residuals of VAR object var1
+Chi-squared = 423.65, df = 2, p-value < 2.2e-16
+
+
+$Kurtosis
+
+	Kurtosis only (multivariate)
+
+data:  Residuals of VAR object var1
+Chi-squared = 14634, df = 2, p-value < 2.2e-16
+
+
+
+	ARCH (multivariate)
+
+data:  Residuals of VAR object var1
+Chi-squared = 647.93, df = 45, p-value < 2.2e-16
+

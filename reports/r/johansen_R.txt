@@ -1,0 +1,31 @@
+
+###################### 
+# Johansen-Procedure # 
+###################### 
+
+Test type: trace statistic , without linear trend and constant in cointegration 
+
+Eigenvalues (lambda):
+[1] 0.0013067966 0.0006651308 0.0000000000
+
+Values of teststatistic and critical values of test:
+
+         test 10pct  5pct  1pct
+r <= 1 | 2.41  7.52  9.24 12.97
+r = 0  | 7.14 17.85 19.96 24.60
+
+Eigenvectors, normalised to first column:
+(These are the cointegration relations)
+
+            GLD.l1     SLV.l1   constant
+GLD.l1    1.000000  1.0000000  1.0000000
+SLV.l1   -2.340659 -0.5843573 -0.1234745
+constant  2.288233 -3.3660115 -4.4818912
+
+Weights W:
+(This is the loading matrix)
+
+            GLD.l1        SLV.l1     constant
+GLD.d 0.0005777117 -0.0003185893 9.977335e-18
+SLV.d 0.0010407377  0.0007906070 1.920379e-17
+

@@ -1,0 +1,51 @@
+Dans un exercice pédagogique, place-toi au 2024-05-22,
+à la clôture. Propose des recommandations d’investissement simulées
+pour GLD et SLV aux horizons de 5 et 10 séances.
+
+PRÉVISIONS DISPONIBLES À CETTE DATE
+       Modèle Actif  Horizon  Dernier prix  Prix prévu  Variation prévue (%)
+Prix inchangé   GLD        5    220.110001  220.110001              0.000000
+Prix inchangé   SLV        5     28.219999   28.219999              0.000000
+Prix inchangé   GLD       10    220.110001  220.110001              0.000000
+Prix inchangé   SLV       10     28.219999   28.219999              0.000000
+         LSTM   GLD        5    220.110001  220.408340              0.135541
+         LSTM   SLV        5     28.219999   28.235155              0.053704
+         LSTM   GLD       10    220.110001  220.657900              0.248921
+         LSTM   SLV       10     28.219999   28.265293              0.160503
+          GRU   GLD        5    220.110001  220.451661              0.155222
+          GRU   SLV        5     28.219999   28.240971              0.074315
+          GRU   GLD       10    220.110001  220.662571              0.251043
+          GRU   SLV       10     28.219999   28.282622              0.221908
+
+INTERVALLES GARCH PONCTUELS À 95 %
+Actif  Horizon  Mediane theorique  Borne basse 95 %  Borne haute 95 %
+  GLD        5         220.110001        210.346752        230.592337
+  GLD       10         220.110001        206.358877        234.938624
+  SLV        5          28.219999         25.674490         31.121380
+  SLV       10          28.219999         24.623281         32.332263
+
+CONTEXTE DISPONIBLE
+Les réseaux utilisent une fenêtre de 30 rendements passés.
+La validation temporelle réalisée avant cette date ne montre
+pas un avantage régulier face au rendement nul.
+Les diagnostics GARCH sur l’apprentissage indiquent des effets
+ARCH résiduels, particulièrement pour SLV.
+Aucune stratégie de trading après frais n’a été évaluée.
+
+CONSIGNES
+1. Propose pour chaque actif une position simulée justifiée :
+   achat, vente ou abstention. L’abstention est une option valable.
+2. Relie les propositions aux variations prévues et à l’incertitude.
+3. Explique les limites : désaccord entre modèles, erreurs possibles,
+   frais, liquidité, changements de régime et estimation du risque.
+4. Distingue les prévisions de prix des intervalles GARCH :
+   ces derniers ne sont pas des intervalles autour du LSTM ou du GRU.
+5. Ne transforme pas les intervalles en garantie de résultat.
+6. N’invente pas de probabilité de hausse, de rendement garanti,
+   de seuil optimal ni de montant à investir.
+7. N’utilise aucune observation ni performance postérieure
+   à la date de décision. Ne recherche pas d’informations externes.
+
+Présente une réponse concise, avec un tableau de décisions simulées
+et une explication des risques. Il s’agit d’un scénario historique,
+pas d’une recommandation actuelle.

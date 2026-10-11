@@ -1,0 +1,31 @@
+Synthèse des résultats 
+
+Pour GLD, le LSTM obtient les meilleures erreurs sur le test aux
+horizons 5 et 10 séances. À 10 séances, son amélioration face au prix
+inchangé est significative après correction de Holm (p = 0,0067).
+Cependant, sa supériorité face au VAR(0) n’est pas significative.
+Le VAR(0) constitue donc un compromis intéressant entre précision,
+simplicité et coût de calcul.
+
+Pour SLV, le GRU obtient les meilleures erreurs sur le test, mais
+les comparaisons réalisées ne montrent pas de différence significative
+après correction de Holm. Les gains observés doivent rester prudents,
+d’autant que la validation temporelle ne montrait pas d’avantage régulier
+des réseaux.
+
+Les intervalles GARCH nominaux à 95 % présentent des couvertures
+observées comprises entre 92,13 % et 93,91 %. Cela suggère une
+sous-couverture sur la période test, sans constituer à lui seul
+un test formel de mauvaise calibration. Les paramètres sont fixes,
+leur incertitude d’estimation est ignorée et des effets ARCH résiduels
+persistent.
+
+Ces résultats ne démontrent pas la rentabilité d’une stratégie
+d’investissement : aucune stratégie avec frais de transaction,
+contraintes d’exécution et mesure du risque n’a été évaluée.
+Les performances peuvent également varier sur d’autres périodes.
+
+Note méthodologique :
+Cette synthèse a été rédigée avec l’aide de ChatGPT après l’analyse
+des résultats. Elle ne constitue pas une interprétation personnelle
+rédigée avant toute consultation d’un LLM.

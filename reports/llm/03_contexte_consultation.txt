@@ -1,0 +1,4 @@
+Consultation rétrospective effectuée dans la conversation de travail
+ChatGPT le 9 octobre 2026, après l’estimation des modèles.
+Le LLM avait accès aux échanges précédents : cette réponse ne constitue
+pas une consultation indépendante limitée aux tableaux du prompt.

@@ -1,0 +1,6 @@
+Point,Analyse
+Classement numérique,La réponse identifie correctement le LSTM pour GLD et le GRU pour SLV sur le test.
+Significativité,"Elle distingue les gains numériques des deux différences significatives après Holm, pour GLD à 10 séances."
+Intervalles GARCH,Elle décrit une sous-couverture observée sans prétendre qu’un test formel de calibration a été effectué.
+Limites,Elle rappelle l’instabilité des gains en validation et l’absence d’évaluation de rentabilité après frais.
+Éléments à compléter,Elle ne précise pas que les 394 origines se chevauchent et ne sont pas indépendantes. Les tests DM utilisent une correction HAC pour cette dépendance.

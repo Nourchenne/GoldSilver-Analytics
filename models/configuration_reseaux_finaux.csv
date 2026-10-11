@@ -1,0 +1,3 @@
+Modele,Fenetre,Actifs_dans_ordre,Unites,Epoques,Batch_size,Learning_rate,Graine,Fin_apprentissage
+LSTM,30,"GLD,SLV",32,2,32,0.001,42,2024-05-22
+GRU,30,"GLD,SLV",32,4,32,0.001,42,2024-05-22

@@ -1,0 +1,39 @@
+Je réalise un projet de séries temporelles sur GLD et SLV,
+deux instruments donnant une exposition à l’or et à l’argent.
+
+Les observations sont quotidiennes, par séance boursière.
+L’historique couvre 2010–2025 et les derniers 10 % sont réservés
+au test. Les tableaux ci-dessous concernent uniquement
+la période d’apprentissage.
+
+Les rendements sont calculés comme :
+100 × différence du logarithme des prix ajustés.
+La kurtosis présentée est un excès de kurtosis.
+
+STATISTIQUES DES RENDEMENTS
+     Moyenne (%)  Écart-type (%)  Variance  Minimum (%)  Maximum (%)  Asymétrie  Excès de kurtosis
+GLD     0.019212        0.977263  0.955044    -9.190507     4.787391  -0.501465           4.995916
+SLV     0.013629        1.820814  3.315364   -15.252920     8.748747  -0.716639           7.079888
+
+TESTS DE STATIONNARITÉ
+Actif     Série Spécification  ADF statistique  ADF p-value  ADF retards  KPSS statistique  KPSS p-value  KPSS retards
+  GLD  Log-prix             c        -0.969130     0.764356            0          3.438896          0.01            38
+  GLD  Log-prix            ct        -1.463296     0.841364            0          1.535507          0.01            38
+  GLD Rendement             c       -60.607564     0.000000            0          0.138119          0.10             5
+  SLV  Log-prix             c        -1.849578     0.356140            0          1.969996          0.01            38
+  SLV  Log-prix            ct        -1.823687     0.693226            0          1.308746          0.01            38
+  SLV Rendement             c       -59.032185     0.000000            0          0.100892          0.10             2
+
+À partir de ces informations :
+1. Propose des hypothèses de modèles de moyenne et de volatilité
+   à tester, en justifiant chaque proposition.
+2. Précise les diagnostics supplémentaires nécessaires avant
+   de retenir ARIMA, SARIMA, VAR, VECM ou GARCH.
+3. Explique comment comparer LSTM et GRU aux modèles classiques
+   sans fuite d’information.
+4. Distingue les conclusions soutenues par les tableaux des
+   hypothèses qui restent à vérifier.
+
+N’invente aucun résultat, aucune p-value ni aucune causalité.
+Ne suppose pas une saisonnalité ou une cointégration non testée.
+Ne formule pas de recommandation d’investissement à cette étape.

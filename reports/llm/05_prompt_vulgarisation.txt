@@ -1,0 +1,97 @@
+Explique les résultats de mon étude GLD/SLV à un décideur
+non statisticien, en français, en 400 à 600 mots.
+
+PROTOCOLE
+Les modèles sont estimés sur les premiers 90 % de l’historique.
+LSTM et GRU ont été évalués par validation croisée temporelle.
+Sur le test final, les prévisions utilisent 394 origines communes,
+aux horizons de 5 et 10 séances. Les paramètres restent fixes,
+mais les observations disponibles sont actualisées à chaque origine.
+
+Les métriques ci-dessous portent sur les prix à l’échéance exacte.
+ARIMA(0,1,0) sans dérive et prix inchangé donnent les mêmes prévisions.
+
+MÉTRIQUES SUR LE TEST
+ Horizon Actif                   Modèle  Nombre de prévisions        MSE      RMSE      MAE  MAPE (%)
+       5   GLD ARIMA(0,1,0) sans dérive                   394  58.073723  7.620612 5.690280  1.921743
+       5   GLD                      GRU                   394  56.282666  7.502177 5.590050  1.888154
+       5   GLD                     LSTM                   394  56.236275  7.499085 5.582794  1.884266
+       5   GLD            Prix inchangé                   394  58.073723  7.620612 5.690280  1.921743
+       5   GLD                   VAR(0)                   394  56.792769  7.536098 5.608667  1.894892
+       5   GLD    VAR(1) complémentaire                   394  56.731044  7.532001 5.607398  1.894363
+       5   SLV ARIMA(0,1,0) sans dérive                   394   2.718503  1.648788 1.154518  3.330045
+       5   SLV                      GRU                   394   2.627209  1.620867 1.138581  3.302336
+       5   SLV                     LSTM                   394   2.660414  1.631078 1.146468  3.313976
+       5   SLV            Prix inchangé                   394   2.718503  1.648788 1.154518  3.330045
+       5   SLV                   VAR(0)                   394   2.695020  1.641651 1.148797  3.316859
+       5   SLV    VAR(1) complémentaire                   394   2.695806  1.641891 1.149105  3.318905
+      10   GLD ARIMA(0,1,0) sans dérive                   394 114.898008 10.719049 7.998731  2.659021
+      10   GLD                      GRU                   394 108.747041 10.428185 7.741939  2.576002
+      10   GLD                     LSTM                   394 108.208223 10.402318 7.717277  2.564907
+      10   GLD            Prix inchangé                   394 114.898008 10.719049 7.998731  2.659021
+      10   GLD                   VAR(0)                   394 109.745717 10.475959 7.783780  2.589448
+      10   GLD    VAR(1) complémentaire                   394 109.654693 10.471614 7.780091  2.588222
+      10   SLV ARIMA(0,1,0) sans dérive                   394   7.109574  2.666378 1.809492  4.915174
+      10   SLV                      GRU                   394   6.786866  2.605161 1.777161  4.852696
+      10   SLV                     LSTM                   394   6.930564  2.632596 1.788918  4.868566
+      10   SLV            Prix inchangé                   394   7.109574  2.666378 1.809492  4.915174
+      10   SLV                   VAR(0)                   394   7.004731  2.646645 1.796802  4.886925
+      10   SLV    VAR(1) complémentaire                   394   7.004473  2.646596 1.797286  4.889177
+
+TESTS DE DIEBOLD–MARIANO
+La perte comparée est l’erreur quadratique.
+La variance est estimée par HAC ; la correction de Holm
+porte sur les 24 comparaisons.
+ Horizon Actif Modèle A      Modèle B   N  Retards HAC  MSE A - MSE B  DM corrigé  p-value  p-value Holm  Significatif à 5 % (Holm)
+       5   GLD     LSTM Prix inchangé 394            5      -1.837449   -3.059577 0.002368      0.052106                      False
+       5   GLD      GRU Prix inchangé 394            5      -1.791057   -1.835174 0.067236      0.941298                      False
+       5   GLD   VAR(0) Prix inchangé 394            5      -1.280954   -3.007370 0.002805      0.058896                      False
+       5   GLD     LSTM        VAR(0) 394            5      -0.556494   -1.431445 0.153097      1.000000                      False
+       5   GLD      GRU        VAR(0) 394            5      -0.510103   -0.828003 0.408171      1.000000                      False
+       5   GLD     LSTM           GRU 394            5      -0.046392   -0.084547 0.932664      1.000000                      False
+       5   SLV     LSTM Prix inchangé 394            5      -0.058089   -1.967018 0.049884      0.798147                      False
+       5   SLV      GRU Prix inchangé 394            5      -0.091294   -2.022526 0.043799      0.744581                      False
+       5   SLV   VAR(0) Prix inchangé 394            5      -0.023483   -2.521915 0.012066      0.229256                      False
+       5   SLV     LSTM        VAR(0) 394            5      -0.034605   -1.200472 0.230679      1.000000                      False
+       5   SLV      GRU        VAR(0) 394            5      -0.067810   -1.807096 0.071512      0.941298                      False
+       5   SLV     LSTM           GRU 394            5       0.033205    0.824533 0.410137      1.000000                      False
+      10   GLD     LSTM Prix inchangé 394            9      -6.689785   -3.666989 0.000279      0.006700                       True
+      10   GLD      GRU Prix inchangé 394            9      -6.150967   -2.843095 0.004701      0.094019                      False
+      10   GLD   VAR(0) Prix inchangé 394            9      -5.152291   -3.377229 0.000805      0.018521                       True
+      10   GLD     LSTM        VAR(0) 394            9      -1.537494   -1.781190 0.075654      0.941298                      False
+      10   GLD      GRU        VAR(0) 394            9      -0.998676   -1.125331 0.261136      1.000000                      False
+      10   GLD     LSTM           GRU 394            9      -0.538818   -0.813076 0.416667      1.000000                      False
+      10   SLV     LSTM Prix inchangé 394            9      -0.179010   -1.917276 0.055928      0.838914                      False
+      10   SLV      GRU Prix inchangé 394            9      -0.322708   -1.824287 0.068868      0.941298                      False
+      10   SLV   VAR(0) Prix inchangé 394            9      -0.104843   -2.379922 0.017793      0.320266                      False
+      10   SLV     LSTM        VAR(0) 394            9      -0.074167   -1.001876 0.317020      1.000000                      False
+      10   SLV      GRU        VAR(0) 394            9      -0.217865   -1.593739 0.111798      1.000000                      False
+      10   SLV     LSTM           GRU 394            9       0.143698    1.158401 0.247404      1.000000                      False
+
+INTERVALLES GARCH
+Intervalles ponctuels nominaux à 95 %, simulés avec innovations
+de Student. Les paramètres sont fixes et leur incertitude
+d’estimation n’est pas intégrée.
+Actif  Horizon   N  Couverture_pct  Largeur_moyenne_USD  Score_moyen
+  GLD        5 394       93.908629            28.132106    38.305739
+  GLD       10 394       92.131980            39.714791    58.535340
+  SLV        5 394       93.654822             5.487049     7.614444
+  SLV       10 394       93.401015             7.783514    10.203909
+
+LIMITES CONNUES
+La validation temporelle ne montre pas un avantage régulier
+des réseaux face au rendement nul.
+Des effets ARCH résiduels persistent après estimation GARCH,
+particulièrement pour SLV.
+Aucune stratégie de trading ni rentabilité après frais n’a été testée.
+
+CONSIGNES
+- Explique les rôles différents de la prévision du prix et de GARCH.
+- Distingue meilleur score numérique et différence significative.
+- Compare précision, simplicité et coût de calcul sans inventer
+  de mesures de temps.
+- Explique les couvertures observées sans affirmer qu’un test
+  formel de calibration a été réalisé.
+- Une différence non significative ne prouve pas l’équivalence.
+- N’invente aucune valeur ni causalité.
+- Ne donne pas encore de recommandation d’investissement.

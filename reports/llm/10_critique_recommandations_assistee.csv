@@ -1,0 +1,6 @@
+Point,Analyse
+Décisions simulées,"L’abstention est cohérente avec les faibles variations prévues et l’absence d’avantage régulier en validation. Elle reste un jugement pédagogique, pas une décision optimale démontrée."
+Incertitude,La réponse distingue correctement les intervalles GARCH des prévisions ponctuelles des réseaux.
+Frais et liquidité,"Leur effet est présenté comme possible, sans inventer de coûts ni affirmer qu’ils annulent effectivement les gains."
+Limites à compléter,Les intervalles sont ponctuels et ignorent l’incertitude d’estimation des paramètres. Ils ne garantissent pas la couverture simultanée de toute la trajectoire.
+Chronologie,"La réponse n’utilise explicitement aucun résultat futur, mais elle a été produite dans une conversation contenant déjà les performances du test. L’absence d’influence du contexte futur ne peut donc pas être garantie."
