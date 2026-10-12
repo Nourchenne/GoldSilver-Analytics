@@ -1,0 +1,14 @@
+numpy
+pandas
+matplotlib
+seaborn
+yfinance
+statsmodels
+pmdarima
+arch
+tensorflow==2.21.0
+scikit-learn==1.7.2
+scipy
+joblib
+jupyter
+ipykernel

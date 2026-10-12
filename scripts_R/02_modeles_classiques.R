@@ -23,14 +23,23 @@ set.seed(42)
 
 # 2. Dossiers ------------------------------------------------
 
-racine <- paste0(
-  "C:/Users/nourc/OneDrive/Bureau/ING3/",
-  "serie temp/projet_or_argent"
+# Lancer le script depuis la racine du projet ou depuis scripts_R.
+racine <- normalizePath(
+  if (dir.exists("data/processed")) {
+    "."
+  } else if (dir.exists("../data/processed")) {
+    ".."
+  } else {
+    stop(
+      "Ouvre le projet et lance le script depuis ",
+      "la racine du projet ou le dossier scripts_R."
+    )
+  },
+  winslash = "/",
+  mustWork = TRUE
 )
 
-if (!dir.exists(racine)) {
-  stop("Dossier du projet introuvable : vérifie la variable racine.")
-}
+message("Racine du projet : ", racine)
 
 dossier_donnees <- file.path(racine, "data", "processed")
 dossier_resultats <- file.path(dossier_donnees, "r")
