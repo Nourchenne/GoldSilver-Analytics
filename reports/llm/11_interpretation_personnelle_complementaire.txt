@@ -1,0 +1,31 @@
+1. Variabilité des actifs
+
+SLV fluctue davantage que GLD. Son écart-type quotidien est de 1,82 %,
+contre 0,98 % pour GLD. Les variations de l’argent sont donc plus
+importantes sur la période d’apprentissage. Cela ne signifie pas
+qu’il rapporte davantage : ses baisses peuvent aussi être plus fortes.
+
+2. Performance des réseaux
+
+Le LSTM obtient les meilleurs scores numériques pour GLD et le GRU
+pour SLV. Cependant, un meilleur score ne suffit pas à démontrer
+une supériorité statistique. Après correction des comparaisons,
+aucun réseau n’est significativement meilleur que VAR(0).
+Pour SLV, aucun gain face au prix inchangé n’est significatif.
+
+3. Choix du modèle de prévision
+
+Nous privilégions VAR(0) pour sa simplicité, son faible coût de calcul
+et ses performances proches de celles des réseaux. Pour GLD à dix
+séances, son amélioration face au prix inchangé est significative.
+Ce choix reste limité à la période étudiée et ne garantit pas les
+performances futures.
+
+4. Limites du GARCH
+
+Le GARCH sert à estimer l’intensité des fluctuations et l’incertitude.
+Ses intervalles annoncés à 95 % couvrent entre 92,13 % et 93,91 %
+des observations sur le test. La couverture observée est donc
+inférieure au niveau annoncé, sans test formel de calibration.
+Des effets ARCH persistent également, particulièrement pour SLV.
+Ces intervalles doivent être utilisés avec prudence.
